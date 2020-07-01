@@ -1,0 +1,14 @@
+{
+  "timeZone": "Asia/Tokyo",
+  "dependencies": {
+    "libraries":[
+      {
+        "userSymbol": "SlackWebhook",
+        "libraryId": "M7LHE2p_dXNrScGShjs9Rl3IZ3Rtf7LGR",
+        "version": "3"
+      }
+    ]
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8"
+}
