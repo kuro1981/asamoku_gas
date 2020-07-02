@@ -1,13 +1,3 @@
-function setTrigger(){ 
-  const d = new Date();
-  var weekday = d.getDay();
-  d.setHours(5);
-  d.setMinutes(30);
-  if (weekday > 0 && weekday < 6 ) {
-    ScriptApp.newTrigger('sendAsamokuText').timeBased().at(d).create();    
-  } 
-}
-
 function createDateString() {
   var d = new Date();
   return Utilities.formatDate( d, 'Asia/Tokyo', 'M月d日');
