@@ -1,10 +1,18 @@
 function setTrigger(){ 
   const d = new Date();
-  var weekday = d.getDay();
   d.setHours(5);
   d.setMinutes(30);
-  if (weekday > 0 && weekday < 6 ) {
+
+  if (isWeekDay(d)) {
     ScriptApp.newTrigger('sendAsamokuText').timeBased().at(d).create();    
+  } 
+}
+
+function businessDayTrigger(){ 
+  const d = new Date();
+
+  if (isWeekDay(d)) {
+    sendAsamokuText()
   } 
 }
 
