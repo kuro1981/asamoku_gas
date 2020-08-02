@@ -33,7 +33,11 @@ export interface SkypeMakeFreeConfSendArguments {
 
 function sendAsamokuText() {
   // slack_hook_url is in Setting.ts
-  const conf_url = getSkypeFreeConf('朝モク会場(' + createDateString() + ')'); 
   var webhook = new SlackWebhook.IncomingWebhook(slack_hook_url);
-  webhook.send('<!channel>\nおはようございます。\n本日(' + createDateString() + ')の会場は下記になります。\n開始は7時30分～になっております。\n' + conf_url);
+  if (use_skype) {
+    const conf_url = getSkypeFreeConf('朝モク会場(' + createDateString() + ')'); 
+    webhook.send('<!channel>\nおはようございます。\n本日(' + createDateString() + ')の会場は下記になります。\n開始は7時30分～になっております。\n' + conf_url);      
+  } else {
+    webhook.send('<!channel>\nおはようございます。\n本日(' + createDateString() + ')はこちらのslackで行います。\n開始は7時30分～になっております。\n好きな時間にJOINいただいて、本日のモクモク内容を共有してからもくもく開始しましょう。');      
+  }
 }
