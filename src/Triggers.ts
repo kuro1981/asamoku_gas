@@ -1,6 +1,6 @@
 function setTrigger(){ 
   const d = new Date();
-  d.setHours(5);
+  d.setHours(6);
   d.setMinutes(30);
 
   if (isWeekDay(d)) {
